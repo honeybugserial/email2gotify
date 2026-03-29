@@ -4,6 +4,8 @@ Establishes connectivity with electronic mail retrieval infrastructure via the I
 
 Works with any standard IMAP server. Designed to run on Windows alongside Proton Mail Bridge, but not limited to it.
 
+![email2gotify screenshot](https://raw.githubusercontent.com/honeybugserial/email2gotify/refs/heads/main/screenShott.png)
+
 ## Download
 
 A pre-compiled Windows binary is available if you don't want to run from source:
