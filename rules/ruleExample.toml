@@ -1,0 +1,86 @@
+# =============================================================================
+# email2gotify — rule file example
+# Copy and rename this file to create a new rule (e.g. github.toml).
+# Each .toml file in the rules/ folder is loaded automatically on startup.
+# =============================================================================
+
+
+# =============================================================================
+# FILTERS
+# Define which emails this rule should match.
+# All fields are optional — leave blank to match everything.
+#
+# Matching is case insensitive and uses "contains" logic.
+# Example: "domainwebsite.gov" will match "noreply@domainwebsite.gov"
+#
+# Multiple values are comma separated:
+# allowed_senders = "alerts@github.com, noreply@github.com"
+# =============================================================================
+
+[filters]
+
+# Only forward emails from these senders.
+# Leave blank to allow emails from any sender.
+allowed_senders = ""
+
+# Never forward emails from these senders, even if allowed_senders is blank.
+blocked_senders = ""
+
+# Only forward if the subject contains at least one of these keywords.
+# Leave blank to allow any subject.
+subject_must_contain = ""
+
+# Skip emails where the subject contains any of these keywords.
+subject_must_not_contain = ""
+
+
+# =============================================================================
+# GOTIFY
+# Which Gotify app to send notifications to.
+#
+# token: Your Gotify APP token. Get this from Gotify → Apps.
+# Create a separate app in Gotify for each rule to keep notifications organized.
+# This is NOT the same as the client token in config.toml.
+#
+# priority: 1 = minimum, 5 = default, 10 = maximum/urgent
+# =============================================================================
+
+[gotify]
+token = ""      # App token — required, must not be empty
+priority = 5    # Notification priority (1-10)
+
+
+# =============================================================================
+# OPTIONS
+# Controls how the email content is formatted in the notification.
+#
+# content_mode options:
+#   preview           — Subject + sender + first N characters of the email body
+#   full              — Subject + sender + entire email body
+#   notification_only — Subject + sender only, no body content
+# =============================================================================
+
+[options]
+content_mode = "preview"    # full | preview | notification_only
+preview_length = 500        # Characters to include in preview mode
+
+
+# =============================================================================
+# DEBUG
+# Used to test this rule without waiting for a real email to arrive.
+#
+# When enabled = true, on startup the script will:
+#   1. Search your mailbox for the most recent email matching this rule's filters
+#   2. Send it to Gotify with "[DEBUG]" prepended to the title
+#   3. Then continue into normal polling as usual
+#
+# Always set enabled = false when you are done testing.
+#
+# scan_days:  How many days back to search. 0 = no date limit.
+# scan_limit: Max number of emails to fetch and check.
+# =============================================================================
+
+[debug]
+enabled = false     # Set to true to test this rule on next startup
+scan_days = 7       # Look back this many days (0 = no limit)
+scan_limit = 50     # Max emails to scan
