@@ -1,0 +1,16 @@
+# email2gotify — dependencies
+# Install with: pip install -r requirements.txt
+#
+# Python 3.11+ required (tomllib is built-in from 3.11)
+
+# UI / display
+rich
+textual
+pyfiglet
+
+# HTTP (Gotify)
+requests
+
+# Window management
+pygetwindow
+screeninfo
