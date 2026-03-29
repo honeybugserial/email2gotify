@@ -4,14 +4,14 @@ Establishes connectivity with electronic mail retrieval infrastructure via the I
 
 Works with any standard IMAP server. Designed to run on Windows alongside Proton Mail Bridge, but not limited to it.
 
----
-# Download
+## Download
 
 A pre-compiled Windows binary is available if you don't want to run from source:
 
 [**Download email2gotify v5.2.4 (Windows .exe)**](https://archive.org/details/dist_email2gotify_v5.2.4.7z)
 
 Extract the archive and place `email2gotify.exe` alongside `config.toml` and the `rules/` directory.
+
 ---
 
 ## Requirements
