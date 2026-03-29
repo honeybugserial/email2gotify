@@ -23,7 +23,7 @@ log_dir = "logs"            # Directory to store log files (created automaticall
 # =============================================================================
 
 [debug]
-enabled = true         # Set to true for verbose output
+enabled = false         # Set to true for verbose output
 pause_on_fail = false   # Pause on fatal errors (useful during development)
 
 
