@@ -26,7 +26,7 @@ email2gotify/
 ├── config.toml               # Server / connection settings
 ├── requirements.txt          # Python dependencies
 └── rules/
-    ├── example.toml          # Template — copy this to create a new rule
+    ├── ruleExample.toml          # Template — copy this to create a new rule
     ├── domainWebsite.toml           # One rule per file
     └── ...
 ```
