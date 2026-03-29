@@ -1,0 +1,74 @@
+# =============================================================================
+# email2gotify — config.toml
+# Main server configuration. Edit this once and leave it alone.
+# =============================================================================
+
+
+# =============================================================================
+# LOGGING
+# =============================================================================
+
+[logging]
+enabled = true              # Write log files to disk
+log_prefix = "email2gotify_"  # Prefix for log filenames
+log_dir = "logs"            # Directory to store log files (created automatically)
+
+
+# =============================================================================
+# DEBUG
+# Controls console/log verbosity for the whole script.
+# When enabled = true, DEBUG level output is shown — every email checked,
+# every filter decision, IMAP queries, Gotify responses, etc.
+# When enabled = false, only INFO and above is shown (matches, sends, errors).
+# =============================================================================
+
+[debug]
+enabled = true         # Set to true for verbose output
+pause_on_fail = false   # Pause on fatal errors (useful during development)
+
+
+# =============================================================================
+# IMAP
+# Connection settings for your email server.
+#
+# Proton Mail Bridge users:
+#   host = "127.0.0.1"
+#   port = the port shown in the Bridge app (usually 1143)
+#   username = your Proton email address
+#   password = the Bridge password shown in the Bridge app (NOT your Proton password)
+# =============================================================================
+
+[imap]
+host = "127.0.0.1"          # IMAP server hostname or IP
+port = 1143                  # IMAP port
+username = "emailAddress@emailDomain.com"  # Your email address
+password = "pTZMiE69d9nfAw-420wBIH"   # IMAP password (Bridge password if using Proton)
+poll_interval = 10           # How often to check for new emails (seconds)
+folder = "INBOX-EMAIL"             # Mailbox folder to watch
+
+
+# =============================================================================
+# GOTIFY
+# Connection to your Gotify server.
+#
+# client_token: Your Gotify CLIENT token. Used only for startup verification
+# to confirm the server is reachable. Get this from Gotify → Clients.
+# Do NOT use an app token here.
+#
+# App tokens (for actually sending notifications) go in each rule file.
+# =============================================================================
+
+[gotify]
+url = "https://domainWebsite.org"  # Your Gotify server URL
+client_token = "420wktiDIXK.69-"      # Gotify client token (for startup check only)
+
+
+# =============================================================================
+# OPTIONS
+# =============================================================================
+
+[options]
+# Mark emails as read after forwarding.
+# Only applies if at least one rule matched the email.
+# If no rules match, the email is left unread.
+mark_as_read = true
